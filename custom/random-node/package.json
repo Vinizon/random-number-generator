@@ -1,0 +1,22 @@
+﻿{
+  "name": "n8n-nodes-random",
+  "version": "1.0.0",
+  "description": "True Random Number Generator via random.org for n8n",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "n8n": { "nodes": [ { "node": "dist/nodes/Random/Random.node.js" } ] },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc && cpy \"src/nodes/**/assets/**/*\" dist/nodes --parents",
+    "pack": "npm pack"
+  },
+  "peerDependencies": { "n8n-workflow": ">=1.0.0" },
+  "devDependencies": {
+    "@types/node": "^22.5.1",
+    "cpy-cli": "^5.0.0",
+    "n8n-workflow": "^1.85.4",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.6.2"
+  }
+}
